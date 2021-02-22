@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/terrytyk77/Portfolio#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "pug": "^3.0.0"
   }
 }
