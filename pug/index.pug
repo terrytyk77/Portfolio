@@ -18,7 +18,7 @@ html(lang="en")
         var link = document.createElement("link")
         link.type = "text/css"
         link.rel = "stylesheet"
-        link.href = "dist/css/bootstrap.min.css"
+        link.href = "css/bootstrap.min.css"
         document.head.appendChild(link)
         }
 
@@ -37,6 +37,6 @@ html(lang="en")
 
         // Bootstrap JS local fallback
         script.
-            if(typeof($.fn.modal) === 'undefined') {document.write(script(src='dist/js/bootstrap.min.js'))}
+            if(typeof($.fn.modal) === 'undefined') {document.write(script(src='js/bootstrap.min.js'))}
 
 
