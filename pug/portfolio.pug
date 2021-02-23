@@ -1,10 +1,13 @@
 extends layouts/main-layout.pug
-        
-block content
-    body
-        // Page Content
-        h1 TK-Dev
-        h2 Developer
 
-        //Youtube Vid
-        iframe(width='424' height='238' src='https://www.youtube.com/embed/PyFie0ILE84' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='true')
+block link
+    -var selected = 'portfolio';
+
+block content
+    // Page Content
+    h1 TK-Dev
+    h2 Developer
+    
+
+    //Youtube Vid
+    iframe(width='424' height='238' src='https://www.youtube.com/embed/PyFie0ILE84' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='true')

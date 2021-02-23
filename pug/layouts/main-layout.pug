@@ -8,19 +8,24 @@ html(lang="en")
         link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous')
         link(rel="stylesheet", href="css/main.css")
         block styles
+
+        block link
+            -var selected = 'home'
+
+
     body
         //Navigation Bar
         nav.navbar.fixed-top.navbar-expand-lg.navbar-dark(style='background-color: var(--primary-color);')
             div.container-fluid
-                a.navbar-brand(href='#') Terry Keyrouz | TK-Dev
+                a.navbar-brand(href='index') Terry Keyrouz | TK-Dev
                 button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 div#navbarSupportedContent.collapse.navbar-collapse
                     ul.navbar-nav.mr-auto
                         li.nav-item
-                            a.nav-link(href='portfolio', class=(path === 'portfolio' ? 'active' : '')) Portfolio
+                            a.nav-link(href='portfolio', class=(selected === 'portfolio' ? 'active' : '')) Portfolio
                         li.nav-item
-                            a.nav-link(href='#') About me
+                            a.nav-link(href='about', class=(selected === 'about' ? 'active' : '')) About me
                         li.nav-item.dropdown
                             a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Projects
                             .dropdown-menu(aria-labelledby='navbarDropdown')
