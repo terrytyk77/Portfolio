@@ -1,4 +1,13 @@
+:root {
+  --primary-color:#1C1C1C;
+  --secondary-color: rgb(149, 26, 26);
+}
+
 body{
-  background-color: black;
-  color: rgb(149, 26, 26);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.bodyContent {
+  padding: 10%;
 }
