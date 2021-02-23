@@ -10,16 +10,15 @@ html(lang="en")
         block styles
     body
         //Navigation Bar
-        nav.navbar.fixed-top.navbar-expand-lg.navbar-dark(style='background-color: #1C1C1C;')
+        nav.navbar.fixed-top.navbar-expand-lg.navbar-dark(style='background-color: var(--primary-color);')
             div.container-fluid
                 a.navbar-brand(href='#') Terry Keyrouz | TK-Dev
                 button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 div#navbarSupportedContent.collapse.navbar-collapse
                     ul.navbar-nav.mr-auto
-                        li.nav-item.active
-                            a.nav-link(href='#') Portfolio
-                            span.sr-only (current)
+                        li.nav-item
+                            a.nav-link(href='/portfolio', class=(path ==='/portfolio' ? 'active' : '')) Portfolio
                         li.nav-item
                             a.nav-link(href='#') About me
                         li.nav-item.dropdown
