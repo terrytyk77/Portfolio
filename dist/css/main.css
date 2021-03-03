@@ -101,6 +101,7 @@ h3 {
 }
 
 p {
+  margin-bottom: 0;
   color : var(--color-white);
   font-size: 0.875rem;
   text-align: justify;
@@ -110,7 +111,6 @@ p {
   max-height:100px;
   min-height:100px;
   line-height: 25px;
-  margin-bottom: 0;
   padding-right:var(--spacing-third);
   overflow-y: auto;
 }
@@ -145,14 +145,10 @@ p {
 }
 
 .secondaryTopMargin{
-  margin-top: var(--spacing-primary);
-}
-
-.thirdTopMargin{
   margin-top: var(--spacing-secondary);
 }
 
-.fourthTopMargin{
+.thirdTopMargin{
   margin-top: var(--spacing-third);
 }
 

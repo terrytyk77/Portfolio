@@ -19,15 +19,15 @@ html(lang="en")
         //Navigation Bar
         nav.navbar.fixed-top.navbar-expand-lg.navbar-dark
             div.container-fluid
-                a.navbar-brand(href='index.html') TK - Dev
+                a.navbar-brand(href='index') TK - Dev
                 button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 div#navbarSupportedContent.collapse.navbar-collapse
                     ul.navbar-nav.mr-auto
                         li.nav-item
-                            a.nav-link(href='projects.html', class=(selected === 'projects' ? 'active' : '')) Projects
+                            a.nav-link(href='projects', class=(selected === 'projects' ? 'active' : '')) Projects
                         li.nav-item
-                            a.nav-link(href='about.html', class=(selected === 'about' ? 'active' : '')) About
+                            a.nav-link(href='about', class=(selected === 'about' ? 'active' : '')) About
                         //li.nav-item.dropdown
                             a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Projects
                             .dropdown-menu(aria-labelledby='navbarDropdown')

@@ -1,0 +1,9 @@
+extends layouts/main-layout.pug
+include functions/projects-mixins.pug
+
+block link
+    include data/projects-data.pug
+
+block content
+    +createProject(ant_invest)
+    
