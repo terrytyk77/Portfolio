@@ -1,83 +1,12 @@
 extends layouts/main-layout.pug
+include functions/projects-mixins.pug
 
 block link
-    -var selected = 'projects';
-    -
-        const obj = [
-            {
-                image:"image/shop.png",
-                title: "Beyond The Brush",
-                type: "Dungeon Crawler",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-                .replace(/\n/g, '<br>'),
-                link:"index.html"
-            },
-            {
-                image:"image/shop.png",
-                title: "Beyond The Canvas",
-                type: "Beyond The Brush's Companion App",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-                .replace(/\n/g, '<br>'),
-                link:"index.html"
-            },
-            {
-                image:"image/shop.png",
-                title: "Beyond The Canvas",
-                type: "Beyond The Brush's Companion App",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-                .replace(/\n/g, '<br>'),
-                link:"index.html"
-            },
-            {
-                image:"image/shop.png",
-                title: "Beyond The Canvas",
-                type: "Beyond The Brush's Companion App",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-                .replace(/\n/g, '<br>'),
-                link:"index.html"
-            },
-            {
-                image:"image/shop.png",
-                title: "Beyond The Canvas",
-                type: "Beyond The Brush's Companion App",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-                .replace(/\n/g, '<br>'),
-                link:"index.html"
-            }
-        ]
-
+    include data/projects-data.pug
+    -   var selected = 'projects';
+    
 block content
-    // Page Content
-    .row
-        .col-lg-12.center
-            h1 Games
-    .row.justify-content-center
-        each val, i in obj
-
-            .col-lg-4.col-md-6.primaryMargin
-                .card
-                    .responsive-container.imageShadow
-                        //Youtube Vid
-                        img(src=`${obj[i].image}`).responsive-iframe
-                    br
-                    h2 #{obj[i].title}
-                    h3 #{obj[i].type}
-                    br
-                    p.
-                        !{obj[i].description}
-                    br
-                    .center
-                        a.button-neon(href= `${obj[i].link}` role='button').center More Details
-                            div 
-                            div
-                            div
-                            div
-               
-
-                   
-
+    +createSectionTitle(game_title)
+    +createCards(game_project)
+    +createSectionTitle(mobile_title)
+    +createCards(mobile_project, true)

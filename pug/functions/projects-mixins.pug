@@ -1,0 +1,65 @@
+mixin createCards(obj, isMobile = false)
+    .row.justify-content-center.primaryTopMargin
+        each _, i in obj
+            .col-sm-12.col-md-6.col-lg-4.col-xl-3
+                .card.primaryBottomMargin
+                    div(class = isMobile? "responsive-vertical-container" : "responsive-horizontal-container")
+                        //Images
+                        img(src=`${obj[i].image}` class = isMobile? "responsive-vertical-frame" : "responsive-horizontal-frame")
+                    h2.secondaryTopMargin #{obj[i].title}
+                    h3.fourthTopMargin #{obj[i].type}
+                    p.thirdTopMargin.description.
+                        !{obj[i].description}
+                    .center
+                        a.button-neon(href= `${obj[i].link}` role='button').center.thirdTopMargin More Details
+                            div 
+                            div
+                            div
+                            div
+
+mixin createSectionTitle(obj)
+    .row.justify-content-center
+        .col-lg-12.center.primaryTopMargin
+            img(src=`${obj.image}`)
+        .col-lg-12.center(style="margin-bottom:var(--spacing-primary); margin-top: var(--spacing-secondary);")
+            h1 #{obj.title}
+
+mixin createInfo(info)
+    .col-sm-12.col-md-6.col-lg-4.col-xl-3.primaryVerticalMargin.center
+        img(src=`${info.image}`)
+        h2.primaryTopMargin #{info.title}
+        p.center.
+            !{info.description}
+
+mixin createProject(project, isMobile = false)
+        +createSectionTitle({title: project.title, image: isMobile? "image/mobile.png" : "image/games.png"})
+        .row.primaryTopMargin
+            .projectPageCard
+                .row.justify-content-center
+                    .col-lg-12.center
+                        .responsive-horizontal-container
+                            //Youtube Vid
+                            iframe(width='424' height='238' src=`${project.video}` frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='true').responsive-horizontal-frame
+                .row.justify-content-center.primaryTopMargin
+                    .col-lg-12.center
+                        h1.primaryTopMargin Description
+                    .col-lg-12.center
+                        p.primaryVerticalMargin.
+                            !{project.description}
+                .row.justify-content-center.primaryTopMargin
+                    each _, i in project.images
+                        .col-sm-12.col-md-6.col-lg-4.col-xl-3
+                            .primaryBottomMargin
+                                div.responsive-horizontal-container
+                                    //Images
+                                    img(src=`${project.images[i]}`).responsive-horizontal-frame
+                .col-lg-12.center.primaryVerticalMargin
+                    h1.primaryTopMargin Development
+                .row.justify-content-center.primaryVerticalMargin
+                    each info, i in project.info_dev
+                        +createInfo(info)
+                .col-lg-12.center
+                        h1.primaryVerticalMargin Source
+                .row.justify-content-center.primaryVerticalMargin
+                    each info, i in project.info_source
+                        +createInfo(info)
