@@ -1,14 +1,14 @@
 // ------------- Images ------------- ||
 -
     const image = {
-        game: "image/games.png",
-        mobile: "image/mobiles.png",
-        technology: "image/technology.png",
-        language: "image/language.png",
-        time: "image/time.png",
-        team: "image/team.png",
-        download: "image/download.png",
-        github: "image/github.png",
+        game: "../../dist/image/games.png",
+        mobile: "../../dist/image/mobiles.png",
+        technology: "../../dist/image/technology.png",
+        language: "../../dist/image/language.png",
+        time: "../../dist/image/time.png",
+        team: "../../dist/image/team.png",
+        download: "../../dist/image/download.png",
+        github: "../../dist/image/github.png",
     }
 // ---------------------------------- ||
 
@@ -24,234 +24,229 @@
         title: "Mobile",
         image: image.mobile
     }
-
--
-    const beyond_the_brush_title = {
-        title: "Beyond The Brush",
-        image: image.game
-    }
-
 // -------------------------------------------------- ||
-
-// ------------- Project Object ------------- ||
--
-    const beyond_the_brush = {
-        title: "Beyond The Brush",
-        video: "https://www.youtube.com/embed/PyFie0ILE84?rel=0",
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-        .replace(/\n/g, '<br>'),
-        images: [
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png"
-        ],
-        info_dev:[
-            {
-                title: "Technologies",
-                image: image.technology,
-                description:`Unity 2020\nNode.js\nMongoDB`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Languages",
-                image: image.language,
-                description:`C#\nJavaScript`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Time",
-                image: image.time,
-                description:`2 months`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Team",
-                image: image.team,
-                description:`Terry Keyrouz\nProoheckcp`
-                .replace(/\n/g, '<br>'),
-            }
-        ],
-        info_source:[
-            {
-                title: "Download",
-                image: image.download,
-                description:`N/A`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Code",
-                image: image.github,
-                hasLink: true,
-                description:`https://github.com/terrytyk77/BeyondTheBrushGame`
-                .replace(/\n/g, '<br>'),
-            }
-        ]
-    }
-
--
-    const ant_invest = {
-        title: "Ant Invest",
-        video: "https://www.youtube.com/embed/MRZu7O-ugq4?rel=0",
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-        .replace(/\n/g, '<br>'),
-        images: [
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png",
-            "image/shop.png"
-        ],
-        info_dev:[
-            {
-                title: "Technologies",
-                image: image.technology,
-                description:`Node.js\nP5.js\nMysql`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Languages",
-                image: image.language,
-                description:`Javascript\nHtml\nCss`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Time",
-                image: image.time,
-                description:`2 months`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Team",
-                image: image.team,
-                description:`Terry Keyrouz`
-                .replace(/\n/g, '<br>'),
-            }
-        ],
-        info_source:[
-            {
-                title: "Download",
-                image: image.download,
-                description:`N/A`
-                .replace(/\n/g, '<br>'),
-            },
-            {
-                title: "Code",
-                image: image.github,
-                description:`N/A`
-                .replace(/\n/g, '<br>'),
-            }
-        ]
-    }
-
-// ------------------------------------------ ||
 
 // ------------- Projects List Object ------------- ||
 -
-    const game_project = [
-        {
-            title: "Beyond The Brush",
-            type: "Dungeon Crawler",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"beyond-the-brush"
+    const projects = {
+        game: {
+            beyond_the_brush : {
+                title: "Beyond The Brush",
+                type: "Dungeon Crawler",
+                logo: "../../dist/image/logo/beyond_the_brush.png",
+                front_image:"../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                video: "https://www.youtube.com/embed/PyFie0ILE84?rel=0",
+                link_to_project:"/html/pug/beyond-the-brush.html",
+                simple_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                detailed_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                screen_shots: [
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png",
+                    "../../dist/image/screenshot/beyond_the_brush/main_menu.png"
+                ],
+                info_development: [
+                    {
+                        title: "Technologies",
+                        image: image.technology,
+                        description:`Unity 2020\nNode.js\nMongoDB`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Languages",
+                        image: image.language,
+                        description:`C#\nJavaScript`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Time",
+                        image: image.time,
+                        description:`2 months`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Team",
+                        image: image.team,
+                        description:`Terry Keyrouz\nProoheckcp`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ],
+                info_source: [
+                    {
+                        title: "Download",
+                        image: image.download,
+                        description:`N/A`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Code",
+                        image: image.github,
+                        description:`https://github.com/terrytyk77/BeyondTheBrushGame`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ]
+            },
+            ant_invest : {
+                title: "Ant Invest",
+                type: "Managment Game",
+                logo: "../../dist/image/logo/ant_invest.png",
+                front_image:"../../dist/image/screenshot/ant_invest/shop.png",
+                video: "https://www.youtube.com/embed/MRZu7O-ugq4?rel=0",
+                link_to_project:"/html/pug/ant-invest.html",
+                simple_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`
+                .replace(/\n/g, '<br>'),
+                detailed_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                screen_shots: [
+                    "../../dist/image/screenshot/ant_invest/shop.png",
+                    "../../dist/image/screenshot/ant_invest/shop.png",
+                    "../../dist/image/screenshot/ant_invest/shop.png",
+                    "../../dist/image/screenshot/ant_invest/shop.png",
+                    "../../dist/image/screenshot/ant_invest/shop.png",
+                    "../../dist/image/screenshot/ant_invest/shop.png"
+                ],
+                info_development: [
+                    {
+                        title: "Technologies",
+                        image: image.technology,
+                        description:`Node.js\nP5.js\nMysql`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Languages",
+                        image: image.language,
+                        description:`Javascript\nHtml\nCss`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Time",
+                        image: image.time,
+                        description:`2 months`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Team",
+                        image: image.team,
+                        description:`Terry Keyrouz`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ],
+                info_source: [
+                    {
+                        title: "Download",
+                        image: image.download,
+                        description:`N/A`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Code",
+                        image: image.github,
+                        description:`N/A`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ]   
+            },
+            whisper_of_death : {
+                title: "Whisper of Death",
+                type: "Platformer",
+                logo: "../../dist/image/logo/whisper_of_death.png",
+                front_image:"../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                video: "https://www.youtube.com/embed/0htp5Il67pk?rel=0",
+                link_to_project:"/html/pug/whisper-of-death.html",
+                simple_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                detailed_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                screen_shots: [
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png",
+                    "../../dist/image/screenshot/whisper_of_death/main_menu.png"
+                ],
+                info_development: [
+                    {
+                        title: "Technologies",
+                        image: image.technology,
+                        description:`LÖVE2D`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Languages",
+                        image: image.language,
+                        description:`Lua`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Time",
+                        image: image.time,
+                        description:`2 months`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Team",
+                        image: image.team,
+                        description:`Terry Keyrouz`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ],
+                info_source: [
+                    {
+                        title: "Download",
+                        image: image.download,
+                        description:`N/A`
+                        .replace(/\n/g, '<br>'),
+                    },
+                    {
+                        title: "Code",
+                        image: image.github,
+                        description:`N/A`
+                        .replace(/\n/g, '<br>'),
+                    }
+                ]
+            }
         },
-        {
-            title: "Ant Invest",
-            type: "Managment Game",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"ant-invest"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
-        },
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/shop.png",
-            link:"index"
+        mobile: {
+            beyond_the_canvas: {
+                title: "Beyond The Canvas",
+                type: "Companion App",
+                front_image:"../../dist/image/beyond_the_canvas.png",
+                link_to_project:"/html/pug/index.html",
+                simple_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                detailed_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+            },
+            zeusometer :{
+                title: "ZeusOMeter",
+                type: "Weather App",
+                front_image:"../../dist/image/zeus_o_meter.png",
+                link_to_project:"/html/pug/index.html",
+                simple_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+                detailed_description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+                .replace(/\n/g, '<br>'),
+            }
         }
-    ]
-
--
-    const mobile_project = [
-        {
-            title: "Beyond The Canvas",
-            type: "Companion App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/beyond_the_canvas.png",
-            link:"index"
-        },
-        {
-            title: "ZeusOMeter",
-            type: "Weather App",
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-            .replace(/\n/g, '<br>'),
-            image:"image/zeus_o_meter.png",
-            link:"index"
-        }
-    ]
-
+    }
 // ------------------------------------------------- ||

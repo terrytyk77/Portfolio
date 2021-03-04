@@ -7,7 +7,7 @@ window.onscroll = function() {
     scrollFunction()
 };
 
-const scrollTopThreshHold = 200
+const scrollTopThreshHold = 100
 
 function scrollFunction() {
   if (document.body.scrollTop > scrollTopThreshHold || document.documentElement.scrollTop > scrollTopThreshHold) {

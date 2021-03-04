@@ -1,24 +1,24 @@
-mixin createNeonButton(link)
+mixin createNeonButton(link, newTab = false)
     .center
-        a.button-neon(href= `${link}` target='_blank' rel='noopener noreferrer' role='button').center.thirdTopMargin More Details
-            div 
+        a.button-neon(href= `${link}` target= newTab? '_blank' : '' rel='noopener noreferrer' role='button').center.thirdTopMargin More Details
+            div
             div
             div
             div
 
-mixin createCards(obj, isMobile = false)
+mixin createCards(projects, isMobile = false)
     .row.justify-content-center.primaryTopMargin
-        each _, i in obj
+        each _, i in projects
             .col-sm-12.col-md-6.col-lg-6.col-xl-4
                 .card.primaryBottomMargin
                     div(class = isMobile? "responsive-vertical-container" : "responsive-horizontal-container")
                         //Images
-                        img(src=`${obj[i].image}` class = isMobile? "responsive-vertical-frame" : "responsive-horizontal-frame")
-                    h2.secondaryTopMargin #{obj[i].title}
-                    h3.fourthTopMargin #{obj[i].type}
-                    p.thirdTopMargin.description.
-                        !{obj[i].description}
-                    +createNeonButton(obj[i].link)
+                        img(src=`${projects[i].front_image}` class = isMobile? "responsive-vertical-frame" : "responsive-horizontal-frame")
+                    h2.secondaryTopMargin #{projects[i].title}
+                    h3.fourthTopMargin #{projects[i].type}
+                    p.thirdTopMargin.description.scroller.
+                        !{projects[i].simple_description}
+                    +createNeonButton(projects[i].link_to_project)
 
 
 mixin createSectionTitle(obj)
@@ -32,8 +32,8 @@ mixin createInfo(info)
     .col-sm-12.col-md-6.col-lg-6.col-xl-4.primaryVerticalMargin.center
         img(src=`${info.image}`)
         h2.thirdTopMargin #{info.title}
-        if info.hasLink
-            +createNeonButton(info.description)
+        if !info.description.indexOf("http")
+            +createNeonButton(info.description, true)
         else
             h3.thirdTopMargin.center.
                 !{info.description}
@@ -49,7 +49,9 @@ mixin postScreenShot(screenshots)
                         img(src=`${screenshots[i]}`).responsive-horizontal-frame
 
 mixin createProject(project, isMobile = false)
-        +createSectionTitle({title: project.title, image: isMobile? image.mobile : image.game})
+        .row.justify-content-center
+            .col-sm-12.col-md-6.col-lg-6.col-xl-4.center
+                img(src=`${project.logo}`).logo
         .row.primaryTopMargin
             .projectPageCard
                 .row.justify-content-center
@@ -62,15 +64,16 @@ mixin createProject(project, isMobile = false)
                         h1.primaryTopMargin Description
                     .col-lg-12.center
                         p.primaryVerticalMargin.
-                            !{project.description}
-                +postScreenShot(project.images)
-                .col-lg-12.center.primaryVerticalMargin
-                    h1.primaryTopMargin Development
+                            !{project.detailed_description}
+                +postScreenShot(project.screen_shots)
+                .row.justify-content-center
+                    .col-lg-12.center.primaryVerticalMargin
+                        h1.primaryTopMargin.center Development
                 .row.justify-content-center.primaryVerticalMargin
-                    each info, i in project.info_dev
+                    each info, i in project.info_development
                         +createInfo(info)
                 .col-lg-12.center
-                        h1.primaryVerticalMargin Source
+                    h1.primaryVerticalMargin Source
                 .row.justify-content-center.primaryVerticalMargin
                     each info, i in project.info_source
                         +createInfo(info)

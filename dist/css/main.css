@@ -32,9 +32,9 @@
   --primary-margin: 4rem;
 
   /* padding/margin */
-  --spacing-primary: 2.1875rem; /* 35px */
-  --spacing-secondary: 1.5625rem;     /* 25px */
-  --spacing-third: 0.9375rem;    /* 15px */
+  --spacing-primary: 2.1875rem;     /* 35px */
+  --spacing-secondary: 1.5625rem;   /* 25px */
+  --spacing-third: 0.9375rem;       /* 15px */
   --spacing-body: 10%;
 
   /* radius */
@@ -46,6 +46,9 @@
 
   /* svg */
   --svg-sive: 1.8em;
+  
+  /* scroll-bar (for firefox) */
+  scrollbar-color: var(--color-primary) var(--color-secondary-border);
 }
 
 /*  ================
@@ -88,6 +91,12 @@ h1 {
   text-transform: capitalize;
   color : var(--color-white);
   font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 h2{
@@ -233,6 +242,10 @@ p {
   right: 0;
   height: 100%;
   width: auto;
+}
+
+.logo{
+  width: 100%;
 }
 
     /* 5.3 buttons */
