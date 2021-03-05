@@ -63,6 +63,12 @@
   padding: calc(var(--nav-height) + var(--spacing-primary) * 2) var(--spacing-body);
 }
 
+@media only screen and (max-width: 768px) {
+  .bodyContent {
+    padding: calc(var(--nav-height) + var(--spacing-primary) * 2) calc(var(--spacing-body)/2);
+  }
+}
+
 html {
   height: 100%;
 }
@@ -201,8 +207,24 @@ p {
   border-radius: var(--border-radius-size-primary);
 }
 
+@media only screen and (max-width: 375px) {
+  .projectPageCard{
+    padding: calc(var(--spacing-primary) / 1.5);
+  }
+
+  .card {
+    padding: calc(var(--spacing-primary) / 1.5);
+  }
+}
+
 .card:hover {
   transform:scale(1.05);
+}
+
+@media only screen and (max-width: 768px) {
+  .card:hover {
+    transform:scale(1);
+  }
 }
 
     /* 5.2 responsive-container */
@@ -267,7 +289,7 @@ p {
   font-size: 18px;
 }
 
-#goToTopButton:hover {
+#goToTopButton:hover,#goToTopButton:focus {
   text-decoration: none;
   border-radius: 50px;
   background-color: var(--color-secondary);
@@ -381,7 +403,7 @@ a.button-neon div:nth-child(4) {
 
     /* 5.4 nav-bar */
 
-nav{
+nav {
   padding: var(--spacing-primary) var(--spacing-body) !important;
   background-color: var(--color-primary);
   font-family: 'Russo One', sans-serif;
@@ -390,8 +412,20 @@ nav{
   justify-content: center;
 }
 
-form.form-inline.my-2.my-lg-0{
-  margin-left: -23px;
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: var(--spacing-primary) calc(var(--spacing-body) / 2) !important;
+  }
+}
+
+hr {
+  border: 1px solid var(--color-secondary-border);
+  border-radius: var(--border-radius-size-primary);
+  box-shadow: 0px 0px 8px var(--color-secondary);
+}
+
+small{
+  margin-left: var(--spacing-third);
 }
 
 .container-fluid {

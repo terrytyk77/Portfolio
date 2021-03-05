@@ -49,6 +49,7 @@ mixin postScreenShot(screenshots)
                         img(src=`${screenshots[i]}`).responsive-horizontal-frame
 
 mixin createProject(project, isMobile = false)
+    .col-lg-12
         .row.justify-content-center
             .col-sm-12.col-md-6.col-lg-6.col-xl-4.center
                 img(src=`${project.logo}`).logo
