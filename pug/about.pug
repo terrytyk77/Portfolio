@@ -7,10 +7,49 @@ block link
 
 block content
     // Page Content
-    .row.justify-content-center.primaryTopMargin
-        .col-sm-12.col-md-6.col-lg-6.col-xl-6
-            .card.primaryVerticalMargin
+    .row.justify-content-center
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
                 +displayProfile(cv.profile)
-        .col-sm-12.col-md-6.col-lg-6.col-xl-6
-            .card.primaryVerticalMargin
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
                 +displayLanguages(cv.languages)
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
+                +blockChart("Programming Languages", cv.codding_languages)
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
+                +blockChart("Technologies", cv.technologies)
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
+                +blockChart("Databases", cv.databases)
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6
+            .card.primaryTopMargin
+                +blockChart("Others", cv.others)
+        .col-12
+            h1.primaryVerticalMargin.center Contacts
+        .col-12
+            .card.primaryTopMargin
+                .row.justify-content-center
+                    .col-6
+                        h1.center asd
+                    .col-6
+                        form(name="contact" method="POST" data-netlify="true")
+                            .row.justify-content-center
+                                .col-6
+                                    label(for='subject') Subject
+                                    input(type='text' name='subject')
+                                .col-6
+                                    label(for='a') E-mail
+                                    input(type='text' name='a')
+                                .col-12
+                                    label(for='message').thirdTopMargin Message
+                                    textarea(name="message", rows="5")
+                                .col-12
+                                    .right
+                                        button(type='submit').button-neon.thirdTopMargin Submit
+                                            div
+                                            div
+                                            div
+                                            div
+                            
