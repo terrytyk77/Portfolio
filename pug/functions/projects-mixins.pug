@@ -13,7 +13,7 @@ mixin createCards(projects, isMobile = false)
                 .card.primaryBottomMargin
                     div(class = isMobile? "responsive-vertical-container" : "responsive-horizontal-container")
                         //Images
-                        img(src=`${projects[i].front_image}` class = isMobile? "responsive-vertical-frame" : "responsive-horizontal-frame")
+                        img(src=`${projects[i].front_image}` alt = " " class = isMobile? "responsive-vertical-frame" : "responsive-horizontal-frame")
                     h2.secondaryTopMargin #{projects[i].title}
                     h3.fourthTopMargin #{projects[i].type}
                     p.thirdTopMargin.description.scroller.
@@ -24,13 +24,13 @@ mixin createCards(projects, isMobile = false)
 mixin createSectionTitle(obj)
     .row.justify-content-center
         .col-lg-12.center.primaryTopMargin
-            img(src=`${obj.image}`)
+            img(src=`${obj.image}` alt = " " style = "width = 100%")
         .col-lg-12.center(style="margin-bottom:var(--spacing-primary); margin-top: var(--spacing-secondary);")
             h1 #{obj.title}
 
 mixin createInfo(info)
     .col-sm-12.col-md-6.col-lg-6.col-xl-4.primaryVerticalMargin.center
-        img(src=`${info.image}`)
+        img(src=`${info.image}` alt = " ")
         h2.thirdTopMargin #{info.title}
         if !info.description.indexOf("http")
             +createNeonButton(info.description, true)
@@ -46,13 +46,13 @@ mixin postScreenShot(screenshots)
                 .primaryBottomMargin
                     div.responsive-horizontal-container
                         //Images
-                        img(src=`${screenshots[i]}`).responsive-horizontal-frame
+                        img(src=`${screenshots[i]}` alt = " ").responsive-horizontal-frame
 
 mixin createProject(project, isMobile = false)
     .col-lg-12
         .row.justify-content-center
             .col-sm-12.col-md-6.col-lg-6.col-xl-4.center
-                img(src=`${project.logo}`).logo
+                img(src=`${project.logo}` alt = " ").logo
         .row.primaryTopMargin
             .projectPageCard
                 .row.justify-content-center
@@ -67,15 +67,57 @@ mixin createProject(project, isMobile = false)
                         p.primaryVerticalMargin.
                             !{project.detailed_description}
                 +postScreenShot(project.screen_shots)
+                .col-lg-12.center.primaryVerticalMargin
+                    h1.primaryVerticalMargin.center Development
                 .row.justify-content-center
-                    .col-lg-12.center.primaryVerticalMargin
-                        h1.primaryTopMargin.center Development
-                .row.justify-content-center.primaryVerticalMargin
                     each info, i in project.info_development
                         +createInfo(info)
                 .col-lg-12.center
                     h1.primaryVerticalMargin Source
-                .row.justify-content-center.primaryVerticalMargin
+                .row.justify-content-center
                     each info, i in project.info_source
                         +createInfo(info)
-                        
+
+mixin displayProfile(profile)
+    .col-12
+        .row.justify-content-center
+            .col-xl-4.col-lg-12.center
+                img(src = "../../dist/image/profile.jpg" style = "width:100%; border-radius: var(--border-radius-size-secondary)" alt = " ").primaryBottomMargin
+            .col-xl-8.col-lg-12
+                h2 Terry Keyrouz
+                h3 Fullstack Developer
+                p.thirdTopMargin Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        .row.justify-content-center.primaryTopMargin
+            .col-lg-4.center
+                h2 Birthday
+            .col-lg-8.center
+                h2 Education
+
+mixin displayLanguages(languages)
+    .col-lg-12
+        .row.justify-content-center
+            .col-lg-12
+                h1.center Languages
+            each val, language in languages
+                col-lg-12.col-xl-6
+                    .primaryTopMargin.col-12.p-0(style = "display: inline-flex")
+                        h2 #{language}
+                        img(src = `${val.flag}` alt = " ").svg-flag
+                    .thirdTopMargin
+                        each rate, i in val.description
+                            .col-12.p-0
+                                h3 #{i}
+                            +ballChart(rate)
+                            
+
+mixin ballChart(rate)
+    - const maxRate = 10
+    .col.p-0(style="display: inline-block;")
+        if rate > maxRate || rate < 0
+            h2 Wrong Rate Value!
+        else
+            - for (var ball = 0; ball < maxRate; ball++)
+                if ball < rate
+                    .ballChartFull.m-0.p-1
+                else
+                    .ballChartEmpty.m-0.p-1
