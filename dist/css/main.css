@@ -505,7 +505,6 @@ a.dropdown-item{
   border: 2px solid var(--color-white-transparent);
   background-color: var(--color-white-transparent);
   border-radius: var(--border-radius-size-circular);
-  margin: var(--spacing-third);
 }
 
 .ballChartFull{
