@@ -34,17 +34,17 @@ block content
                     .col-6
                         h1.center asd
                     .col-6
-                        form(name="contact" method="POST" data-netlify="true")
+                        form(name="contact" method="POST" data-netlify="true" action="")
                             .row.justify-content-center
                                 .col-6
                                     label(for='subject') Subject
-                                    input(type='text' name='subject')
+                                    input(type='text' id="subject" name='subject')
                                 .col-6
-                                    label(for='a') E-mail
-                                    input(type='text' name='a')
+                                    label(for='email') E-mail
+                                    input(type='text' id='email' name='email')
                                 .col-12
                                     label(for='message').thirdTopMargin Message
-                                    textarea(name="message", rows="5")
+                                    textarea(name="message", rows="5" id='message')
                                 .col-12
                                     .right
                                         button(type='submit').button-neon.thirdTopMargin Submit
