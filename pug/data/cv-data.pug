@@ -1,25 +1,25 @@
 // ------------- Images ------------- ||
 -
     const image = {
-        game: "image/games.png",
-        mobile: "image/mobiles.png",
-        technology: "image/technology.png",
-        language: "image/language.png",
-        time: "image/time.png",
-        team: "image/team.png",
-        download: "image/download.png",
-        github: "image/github.png",
-        education: "image/education.png",
+        game: "/image/games.png",
+        mobile: "/image/mobiles.png",
+        technology: "/image/technology.png",
+        language: "/image/language.png",
+        time: "/image/time.png",
+        team: "/image/team.png",
+        download: "/image/download.png",
+        github: "/image/github.png",
+        education: "/image/education.png",
     }
 // ---------------------------------- ||
 
 -
     const cv = {
         profile:{
-            image: "image/profile.jpg",
+            image: "/image/profile.jpg",
             name: "Terry Keyrouz",
             title: "Fullstack Developer",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            description: "My name is Terry, 22 years young dev.I am Lebanese / Romanian, before coming to this university, I was in a professional IT course which I held second spot in my country ranking.I pretty much code all day and play games with friends if any time is leftMy name is Terry, 22 years young dev.I am Lebanese / Romanian, before coming to this university, I was in a professional IT course which I held second spot in my country ranking.\n\nI pretty much code all day and play games with friends if any time is leftMy name is Terry, 22 years young dev.I am Lebanese / Romanian, before coming to this university, I was in a professional IT course which I held second spot in my country ranking.I pretty much code all day and play games with friends if any time is left"
             .replace(/\n/g, '<br>'),
             info:{
                 birthday: {
@@ -33,6 +33,12 @@
                     image: image.education,
                     description:`Ensino Secundário IT (2000-2000)\n\nLicenciatura Games Development (2019-2022)`
                     .replace(/\n/g, '<br>'),
+                },
+                asay1: {
+                    title: "Birthday",
+                    image: image.time,
+                    description:`1998`
+                    .replace(/\n/g, '<br>'),
                 }
             }
         },
@@ -43,7 +49,7 @@
                     understanding: 10,
                     writting: 9
                 },
-                flag: "image/flag/united-states.svg"
+                flag: "/image/flag/united-states.svg"
             },
             french: {
                 description:{
@@ -51,7 +57,7 @@
                     understanding: 10,
                     writting: 8
                 },
-                flag: "image/flag/france.svg"
+                flag: "/image/flag/france.svg"
             },
             arabic: {
                 description:{
@@ -59,7 +65,7 @@
                     understanding: 8,
                     writting: 8
                 },
-                flag: "image/flag/lebanon.svg"
+                flag: "/image/flag/lebanon.svg"
             },
             portuguese: {
                 description:{
@@ -67,7 +73,7 @@
                     understanding: 7,
                     writting: 5
                 },
-                flag: "image/flag/portugal.svg"
+                flag: "/image/flag/portugal.svg"
             }
         },
         codding_languages:{
@@ -143,7 +149,7 @@
             Premier: {
                 rate: 7
             },
-            Audacity: {
+            Audition: {
                 rate: 7
             },
             "Dragon": {

@@ -13,6 +13,7 @@
     5.5 drop-down-menu
     5.6 scroll-bar
     5.7 chart
+    5.8 tooltip
 */
 
 /*  ================
@@ -244,16 +245,6 @@ p {
 
   .card {
     padding: calc(var(--spacing-primary) / 1.5);
-  }
-}
-
-.card:hover {
-  transform:scale(1.05);
-}
-
-@media only screen and (max-width: 768px) {
-  .card:hover {
-    transform:scale(1);
   }
 }
 
@@ -521,8 +512,8 @@ a.dropdown-item{
     /* 5.7 chart */
 
 .ballChartEmpty,.ballChartFull{
-  display: inline-block;
-  width: 8%;
+  display: inline-flex;
+  width: 10%;
   border: 2px solid var(--color-white-transparent);
   background-color: var(--color-white-transparent);
   border-radius: var(--border-radius-size-circular);
@@ -548,3 +539,24 @@ a.dropdown-item{
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.25), 0px 0px 8px var(--color-secondary);
 }
 
+    /* 5.7 tooltip */
+    
+.toolTip .toolTipText {
+  width: fit-content;
+  bottom: 120%;
+  visibility: hidden;
+  color: var(--color-white);
+  background: linear-gradient(0deg, rgba(173, 180, 198, 0.15) 0%, rgba(173, 180, 198, 0) 104.27%);
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.25), 0px 0px 8px var(--color-secondary);
+  border: 2px solid var(--color-secondary-border);
+  text-align: center;
+  padding: var(--spacing-third);
+  border-radius: var(--border-radius-size-secondary);
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 10;
+}
+
+.toolTip:hover .toolTipText {
+  visibility: visible;
+}

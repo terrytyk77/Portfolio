@@ -8,46 +8,57 @@ block link
 block content
     // Page Content
     .row.justify-content-center
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
+        .col-sm-12.col-md-12.col-lg-12.col-xl-12.primaryTopMargin
+            .card
                 +displayProfile(cv.profile)
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
+        .col-sm-12.col-md-12.col-lg-12.col-xl-12.primaryTopMargin
+            .card
                 +displayLanguages(cv.languages)
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
-                +blockChart("Programming Languages", cv.codding_languages)
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6.primaryTopMargin
+            .card
+                +blockChart("Programming", cv.codding_languages)
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6.primaryTopMargin
+            .card
                 +blockChart("Technologies", cv.technologies)
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6.primaryTopMargin
+            .card
                 +blockChart("Databases", cv.databases)
-        .col-sm-12.col-md-12.col-lg-6.col-xl-6
-            .card.primaryTopMargin
+        .col-sm-12.col-md-12.col-lg-6.col-xl-6.primaryTopMargin
+            .card
                 +blockChart("Others", cv.others)
-        .col-12
-            h1.primaryVerticalMargin.center Contacts
-        .col-12
-            .card.primaryTopMargin
+        .col-12.primaryTopMargin
+            .card
                 .row.justify-content-center
-                    .col-6
-                        h1.center asd
-                    .col-6
+                    .col-12
+                        h1.center Interessted in my work?
+                    .col-12.col-xl-6.pr-4
+                        p.primaryTopMargin.
+                            If you are interested in my work, you can message me directly through this form. 
+                            There’s also a PDF downloadable version of my Curriculum Vitae so that you can consult anywhere anytime,.asldaklk+asdla,d.
+                            There’s also a PDF downloadable version of my Curriculum Vitae so that you can consult anywhere anytime,.asldaklk+asdla,d.
+                        .col-12.center.primaryTopMargin
+                            +createInfo({
+                                title: "Technologies",
+                                image: image.technology,
+                                file_name: "Terry Keyrouz - CV",
+                                description:`../../dist/image/education.png`
+                                .replace(/\n/g, '<br>'),
+                            })
+                    .col-12.col-xl-6.pl-4
                         form(name="contact" method="POST" data-netlify="true" action="")
                             .row.justify-content-center
-                                .col-6
+                                .col-12.col-md-6.primaryTopMargin
                                     label(for='subject') Subject
-                                    input(type='text' id="subject" name='subject')
-                                .col-6
+                                    input(type='text' id="subject" name='subject' placeholder="Subject...")
+                                .col-12.col-md-6.primaryTopMargin
                                     label(for='email') E-mail
-                                    input(type='text' id='email' name='email')
+                                    input(type='text' id='email' name='email' placeholder="E-mail...")
+                                .col-12.primaryTopMargin
+                                    label(for='message') Message
+                                    textarea(name="message", rows="5" id='message' placeholder="Write your message...")
                                 .col-12
-                                    label(for='message').thirdTopMargin Message
-                                    textarea(name="message", rows="5" id='message')
-                                .col-12
-                                    .right
-                                        button(type='submit').button-neon.thirdTopMargin Submit
+                                    .center
+                                        button(type='submit').button-neon.secondaryTopMargin Submit E-Mail
                                             div
                                             div
                                             div

@@ -1,10 +1,17 @@
-mixin createNeonButton(link, newTab = false)
+mixin createNeonButton(link, newTab = false , downloadable = undefined)
     .center
-        a.button-neon(href= `${link}` target= newTab? '_blank' : '' rel='noopener noreferrer' role='button').center.thirdTopMargin More Details
-            div
-            div
-            div
-            div
+        if downloadable
+            a.button-neon(href= `${link}` target= newTab? '_blank' : '' rel='noopener noreferrer' role='button' download = downloadable).center.thirdTopMargin More Details
+                div
+                div
+                div
+                div
+        else
+            a.button-neon(href= `${link}` target= newTab? '_blank' : '' rel='noopener noreferrer' role='button').center.thirdTopMargin More Details
+                div
+                div
+                div
+                div
 
 mixin createCards(projects, isMobile = false)
     .row.justify-content-center.primaryTopMargin
@@ -20,7 +27,6 @@ mixin createCards(projects, isMobile = false)
                         !{projects[i].simple_description}
                     +createNeonButton(projects[i].link_to_project)
 
-
 mixin createSectionTitle(obj)
     .row.justify-content-center
         .col-lg-12.center.primaryTopMargin
@@ -31,8 +37,10 @@ mixin createSectionTitle(obj)
 mixin createInfo(info)
     img(src=`${info.image}` alt = " ")
     h2.thirdTopMargin #{info.title}
-    if !info.description.indexOf("http")
-        +createNeonButton(info.description, true)
+    if info.description.includes("http")
+        +createNeonButton(info.description, newTab = true)
+    else if info.description.includes(".jpg") || info.description.includes(".png") || info.description.includes(".pdf")
+        +createNeonButton(info.description, newTab = false, downloadable = info.file_name)
     else
         h3.thirdTopMargin.center.
             !{info.description}
@@ -82,28 +90,31 @@ mixin createProject(project, isMobile = false)
 mixin displayProfile(profile)
     .col-12
         .row.justify-content-center
-            .col-xl-4.col-lg-12.col-md-6.center.p-0.p-xl-3.p-md-3
-                img(src = `${profile.image}` style = "width:100%; border-radius: var(--border-radius-size-secondary)" alt = " ").m-xl-0.mb-4
-            .col-xl-8.col-lg-12.col-md-6.p-0.p-xl-3.p-md-3
-                h2 #{profile.name}
-                h3 #{profile.title}
-                p.thirdTopMargin.
-                    #{profile.description}
-        .row.justify-content-center
-            .col-6.col-xl-4.col-lg-6.col-md-6.center.primaryTopMargin.p-0
-                +createInfo(profile.info.birthday)
-            .col-6.col-xl-8.col-lg-6.col-md-6.center.primaryTopMargin.p-0
-                +createInfo(profile.info.Education)
+            .col-12.p-0
+                .col-12.center
+                    h1 #{profile.name}
+                    h2.thirdTopMargin #{profile.title}
+                .row.justify-content-center
+                    .col-xl-3.col-lg-4.col-md-6.center.primaryTopMargin
+                        img(src = `${profile.image}` style = "width:100%; border-radius: var(--border-radius-size-secondary)" alt = " ").center
+                .col-12.p-0
+                    p.primaryVerticalMargin.
+                        !{profile.description}
+                .col-12
+                    .row.justify-content-center
+                        each info, i in profile.info
+                            .col-sm-12.col-md-6.col-lg-6.col-xl-4.primaryVerticalMargin.center
+                                +createInfo(info)
                     
                 
 
 mixin displayLanguages(languages)
     .col-lg-12
-        .row.justify-content-center
+        .row.justify-content-between
             .col-lg-12
                 h1.center Languages
             each val, language in languages
-                .col-md-6.col-lg-12.col-xl-6.p-0.pr-xl-4.pr-md-4
+                .col-md-6.col-lg-6.col-xl-3.p-0(class = (language == "english") ? "pr-md-4" : (language == "french") ? "pl-md-4 px-xl-4" : (language == "arabic") ? "pr-md-4 px-xl-4" : "pl-md-4")
                     .primaryTopMargin.col-12.p-0(style = "display: inline-flex")
                         h2.p-0 #{language}
                         img(src = `${val.flag}` alt = " ").svg-flag
@@ -114,21 +125,25 @@ mixin displayLanguages(languages)
                             +ballChart(rate)
 
 mixin blockChart(chartTitle, dataSet, options = {"width": ""})
-    .col-lg-12.p-0
-        .row.justify-content-center
-            .col-lg-12
-                h1.center.primaryBottomMargin #{chartTitle}
-        .row.justify-content-around
-            .col-lg-12(style = "display: contents")
-                - const collumn_spacing = 100 / Object.keys(dataSet).length
-                each val, language in dataSet
-                    .col-auto.p-0(style = `width: ${options.width || (collumn_spacing - collumn_spacing * .15).toString() + "%"}`)
-                        .thirdTopMargin
-                            each rate, i in val
-                                .col-12.p-0
-                                    +blockRow(rate)
-                        .thirdTopMargin.col-12.p-0.center
-                            h3.p-0.center #{language}
+    .col-12
+        .col-lg-12.p-0
+            .row.justify-content-center
+                .col-lg-12.p-0
+                    h1.center.primaryBottomMargin #{chartTitle}
+            .row.justify-content-between
+                .col-lg-12(style = "display: contents")
+                    - const collumn_spacing = 100 / Object.keys(dataSet).length
+                    each val, language in dataSet
+                        .col-auto.p-0(style = `width: ${options.width || (collumn_spacing - collumn_spacing * .15).toString() + "%"}`)
+                            .thirdTopMargin
+                                each rate, i in val
+                                    .col-12.p-0
+                                        +blockRow(rate)
+                            .col-12.p-0.thirdTopMargin.center
+                                .toolTip.center
+                                    h3.p-0.center #{language}
+                                    span.toolTipText.center #{language}
+                                
 
 mixin blockRow(rate)
     - const maxRate = 10
@@ -144,7 +159,7 @@ mixin blockRow(rate)
 
 mixin ballChart(rate)
     - const maxRate = 10
-    .col.p-0(style="display: inline-block;")
+    .col.p-0(style="display: inline-flex;")
         if rate > maxRate || rate < 0
             h2 Wrong Rate Value!
         else
